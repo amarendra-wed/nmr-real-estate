@@ -365,7 +365,6 @@
       <h1>Find land ready for your next build.</h1>
       <p>Browse residential plots, farm land, roadside parcels, and investment acreage with clear details on access, utilities, zoning, and development potential.</p>
       <div class="contact-actions">
-        <a class="action-link" href="https://wa.me/919951212758?text=Hi%20NMR%20Real%20Estate%2C%20I%20am%20interested%20in%20land." target="_blank" rel="noopener">WhatsApp NMR</a>
         <a class="action-link secondary" href="tel:+919951212758">Call 9951212758</a>
         <a class="action-link youtube" href="https://youtube.com/@nmrrealestate-e6w?si=_t_5kFzZLIAzgXs8" target="_blank" rel="noopener">YouTube</a>
       </div>
@@ -445,9 +444,8 @@
     <section id="contact" class="connect">
       <div>
         <h2>Connect with NMR</h2>
-        <p>Customers can call or WhatsApp you directly at 9951212758. They can also fill this enquiry form and it will open WhatsApp with their details.</p>
+        <p>Customers can call you directly at 9951212758, watch your YouTube channel, or fill this enquiry form with their land requirement.</p>
         <div class="contact-actions">
-          <a class="action-link" href="https://wa.me/919951212758?text=Hi%20NMR%20Real%20Estate%2C%20I%20want%20land%20details." target="_blank" rel="noopener">Send WhatsApp</a>
           <a class="action-link secondary" href="tel:+919951212758">Call now</a>
           <a class="action-link youtube" href="https://youtube.com/@nmrrealestate-e6w?si=_t_5kFzZLIAzgXs8" target="_blank" rel="noopener">Watch YouTube</a>
         </div>
@@ -464,17 +462,12 @@
 
   <footer>
     <strong>NMR REAL ESTATE</strong>
-    <span>Call or WhatsApp: 9951212758 | YouTube: @nmrrealestate-e6w</span>
+    <span>Call: 9951212758 | YouTube: @nmrrealestate-e6w</span>
   </footer>
   <script>
     document.querySelector(".connect-form").addEventListener("submit", (event) => {
       event.preventDefault();
-      const name = document.querySelector("#customer-name").value.trim();
-      const phone = document.querySelector("#customer-phone").value.trim();
-      const location = document.querySelector("#land-location").value.trim();
-      const message = document.querySelector("#customer-message").value.trim();
-      const text = `Hi NMR Real Estate, I want land details.%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ALocation: ${encodeURIComponent(location)}%0AMessage: ${encodeURIComponent(message)}`;
-      window.open(`https://wa.me/919951212758?text=${text}`, "_blank");
+      alert("Thank you. Please call NMR REAL ESTATE at 9951212758 to complete your enquiry.");
     });
 
     document.querySelectorAll('input[type="file"]').forEach((input) => {
