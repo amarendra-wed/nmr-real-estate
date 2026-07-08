@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NMR REAL ESTATE</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17211f;
+      background: #f6f3ec;
+    }
+    .hero {
+      min-height: 82vh;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(10, 28, 25, 0.86), rgba(10, 28, 25, 0.35)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center / cover;
+      padding: 28px min(6vw, 72px);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+    .hero.custom-image {
+      background:
+        linear-gradient(90deg, rgba(10, 28, 25, 0.86), rgba(10, 28, 25, 0.35)),
+        var(--hero-image) center / cover;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      font-weight: 700;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      opacity: 0.88;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+    }
+    .logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #d0a04f;
+      background: #102235;
+    }
+    .hero-content {
+      max-width: 720px;
+      align-self: center;
+      padding-bottom: 70px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+    .hero p {
+      max-width: 560px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.86);
+      margin: 24px 0 30px;
+    }
+    button {
+      border: 0;
+      border-radius: 8px;
+      background: #d0a04f;
+      color: #17211f;
+      min-height: 44px;
+      padding: 0 20px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .action-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 18px;
+      color: #17211f;
+      background: #d0a04f;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .action-link.secondary {
+      color: white;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.34);
+    }
+    .action-link.youtube {
+      color: white;
+      background: #c4302b;
+    }
+    .upload-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      min-height: 42px;
+      border-radius: 8px;
+      background: white;
+      color: #17211f;
+      padding: 0 16px;
+      font-weight: 800;
+      cursor: pointer;
+      text-transform: none;
+      font-size: 0.92rem;
+      margin: 0 10px 0 0;
+    }
+    .upload-label input {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .search {
+      width: min(1080px, calc(100% - 36px));
+      margin: -48px auto 64px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 18px 45px rgba(23,33,31,0.16);
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr auto;
+      gap: 12px;
+      position: relative;
+    }
+    label {
+      display: block;
+      font-size: 0.76rem;
+      color: #68736e;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+    input, select {
+      width: 100%;
+      border: 1px solid #d8dedb;
+      border-radius: 8px;
+      min-height: 42px;
+      padding: 0 12px;
+      font: inherit;
+      background: white;
+    }
+    main {
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto 70px;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+    }
+    .section-head p {
+      max-width: 430px;
+      color: #68736e;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .listings {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #d8dedb;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      aspect-ratio: 1.35;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 18px;
+    }
+    .card-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      margin-top: 14px;
+      border: 1px solid #d8dedb;
+      border-radius: 8px;
+      color: #17211f;
+      background: #f6f3ec;
+      padding: 0 12px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: none;
+    }
+    .card-upload input {
+      position: absolute;
+      inline-size: 1px;
+      block-size: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+    .tag {
+      background: #e4f0eb;
+      color: #155e4b;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    .price {
+      color: #c95f4b;
+      font-weight: 900;
+    }
+    h3 {
+      margin: 16px 0 8px;
+      font-size: 1.2rem;
+    }
+    .address {
+      color: #68736e;
+      margin: 0 0 16px;
+      line-height: 1.45;
+    }
+    .facts {
+      border-top: 1px solid #d8dedb;
+      padding-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      color: #68736e;
+      font-size: 0.9rem;
+    }
+    .facts strong {
+      color: #17211f;
+      display: block;
+      font-size: 1.05rem;
+    }
+    .market {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .market img {
+      width: 100%;
+      min-height: 420px;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .panel {
+      background: #17211f;
+      color: white;
+      border-radius: 8px;
+      padding: clamp(28px, 5vw, 48px);
+      display: grid;
+      align-content: center;
+      gap: 20px;
+    }
+    .panel p {
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .stat {
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .stat strong {
+      display: block;
+      color: #d0a04f;
+      font-size: 1.6rem;
+    }
+    .connect {
+      margin-top: 70px;
+      background: white;
+      border: 1px solid #d8dedb;
+      border-radius: 8px;
+      padding: clamp(24px, 5vw, 42px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .connect p {
+      color: #68736e;
+      line-height: 1.7;
+    }
+    .connect-form {
+      display: grid;
+      gap: 12px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 110px;
+      border: 1px solid #d8dedb;
+      border-radius: 8px;
+      padding: 12px;
+      font: inherit;
+      resize: vertical;
+    }
+    footer {
+      background: #155e4b;
+      color: white;
+      padding: 30px min(6vw, 72px);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      nav .links { display: none; }
+      .search, .listings, .market, .connect { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav>
+      <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Real Estate logo" /> NMR REAL ESTATE</div>
+      <div class="links">
+        <a href="#listings">Land</a>
+        <a href="#market">Market</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <section class="hero-content">
+      <h1>Find land ready for your next build.</h1>
+      <p>Browse residential plots, farm land, roadside parcels, and investment acreage with clear details on access, utilities, zoning, and development potential.</p>
+      <div class="contact-actions">
+        <a class="action-link" href="https://wa.me/919951212758?text=Hi%20NMR%20Real%20Estate%2C%20I%20am%20interested%20in%20land." target="_blank" rel="noopener">WhatsApp NMR</a>
+        <a class="action-link secondary" href="tel:+919951212758">Call 9951212758</a>
+        <a class="action-link youtube" href="https://youtube.com/@nmrrealestate-e6w?si=_t_5kFzZLIAzgXs8" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </section>
+  </header>
+
+  <form class="search">
+    <div>
+      <label for="location">Location</label>
+      <input id="location" value="AP and TG" />
+    </div>
+    <div>
+      <label for="type">Land type</label>
+      <select id="type"><option>Residential plot</option><option>Farm land</option><option>Commercial land</option><option>Roadside parcel</option></select>
+    </div>
+    <div>
+      <label for="size">Land size</label>
+      <select id="size"><option>1 to 10 acres</option><option>10 to 20 acres</option><option>20 to 30 acres</option><option>30 to 40 acres</option><option>50+ acres</option></select>
+    </div>
+    <button type="submit">Search</button>
+  </form>
+
+  <main>
+    <section id="listings">
+      <div class="section-head">
+        <h2>Featured land</h2>
+        <p>Curated land listings with verified road access, build potential, and practical details for buyers and investors.</p>
+      </div>
+      <div class="listings">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Open green land with trees and hills" />
+          <div class="card-body">
+            <div class="topline"><span class="tag">Residential plot</span><span class="price">Rs. 45 Lakhs</span></div>
+            <h3>AP Highway Venture Plot</h3>
+            <p class="address">Andhra Pradesh, India</p>
+            <div class="facts"><span><strong>2.4</strong>Acres</span><span><strong>Road</strong>Access</span><span><strong>R-1</strong>Zoning</span></div>
+            <label class="card-upload">Change image<input type="file" accept="image/*" data-target="card" /></label>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1500076656116-558758c991c1?auto=format&fit=crop&w=900&q=80" alt="Large rural field under open sky" />
+          <div class="card-body">
+            <div class="topline"><span class="tag">Farm land</span><span class="price">Rs. 2.8 Cr</span></div>
+            <h3>Telangana Farm Land Parcel</h3>
+            <p class="address">Telangana, India</p>
+            <div class="facts"><span><strong>38</strong>Acres</span><span><strong>Well</strong>Water</span><span><strong>AG</strong>Zoning</span></div>
+            <label class="card-upload">Change image<input type="file" accept="image/*" data-target="card" /></label>
+          </div>
+        </article>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=900&q=80" alt="Wide field with grass and trees" />
+          <div class="card-body">
+            <div class="topline"><span class="tag">Commercial land</span><span class="price">Rs. 1.35 Cr</span></div>
+            <h3>AP and TG Roadfront Lot</h3>
+            <p class="address">AP and TG, India</p>
+            <div class="facts"><span><strong>6.8</strong>Acres</span><span><strong>Power</strong>Nearby</span><span><strong>C-2</strong>Zoning</span></div>
+            <label class="card-upload">Change image<input type="file" accept="image/*" data-target="card" /></label>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="market" class="market">
+      <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1100&q=80" alt="Cultivated land with rows of crops" />
+      <div class="panel">
+        <h2>Know the land before you buy.</h2>
+        <p>Review road frontage, soil character, flood considerations, nearby utilities, zoning, and future growth signals before choosing a parcel.</p>
+        <div class="stats">
+          <div class="stat"><strong>18</strong>active parcels</div>
+          <div class="stat"><strong>240+</strong>acres available</div>
+          <div class="stat"><strong>11</strong>zoning types</div>
+          <div class="stat"><strong>32</strong>areas tracked</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="connect">
+      <div>
+        <h2>Connect with NMR</h2>
+        <p>Customers can call or WhatsApp you directly at 9951212758. They can also fill this enquiry form and it will open WhatsApp with their details.</p>
+        <div class="contact-actions">
+          <a class="action-link" href="https://wa.me/919951212758?text=Hi%20NMR%20Real%20Estate%2C%20I%20want%20land%20details." target="_blank" rel="noopener">Send WhatsApp</a>
+          <a class="action-link secondary" href="tel:+919951212758">Call now</a>
+          <a class="action-link youtube" href="https://youtube.com/@nmrrealestate-e6w?si=_t_5kFzZLIAzgXs8" target="_blank" rel="noopener">Watch YouTube</a>
+        </div>
+      </div>
+      <form class="connect-form">
+        <input id="customer-name" type="text" placeholder="Your name" />
+        <input id="customer-phone" type="tel" placeholder="Phone number" />
+        <input id="land-location" type="text" placeholder="Land location" />
+        <textarea id="customer-message" placeholder="Tell us what land you want to buy or sell"></textarea>
+        <button type="submit">Send enquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <strong>NMR REAL ESTATE</strong>
+    <span>Call or WhatsApp: 9951212758 | YouTube: @nmrrealestate-e6w</span>
+  </footer>
+  <script>
+    document.querySelector(".connect-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const name = document.querySelector("#customer-name").value.trim();
+      const phone = document.querySelector("#customer-phone").value.trim();
+      const location = document.querySelector("#land-location").value.trim();
+      const message = document.querySelector("#customer-message").value.trim();
+      const text = `Hi NMR Real Estate, I want land details.%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ALocation: ${encodeURIComponent(location)}%0AMessage: ${encodeURIComponent(message)}`;
+      window.open(`https://wa.me/919951212758?text=${text}`, "_blank");
+    });
+
+    document.querySelectorAll('input[type="file"]').forEach((input) => {
+      input.addEventListener("change", () => {
+        const file = input.files && input.files[0];
+        if (!file) return;
+
+        const imageUrl = URL.createObjectURL(file);
+        if (input.dataset.target === "hero") {
+          const hero = document.querySelector(".hero");
+          hero.style.setProperty("--hero-image", `url("${imageUrl}")`);
+          hero.classList.add("custom-image");
+          return;
+        }
+
+        const card = input.closest(".card");
+        const image = card && card.querySelector("img");
+        if (image) image.src = imageUrl;
+      });
+    });
+  </script>
+</body>
+</html>
