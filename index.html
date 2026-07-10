@@ -3,211 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="NMR Real Estate offers farm land, palm oil land, plots and commercial land across Andhra Pradesh and Telangana.">
-  <meta name="keywords" content="NMR Real Estate, Farm Land, Palm Oil Land, Open Plots, Andhra Pradesh, Telangana">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://amarendra-wed.github.io/nmr-real-estate/">
-  <link rel="icon" href="nmr-logo.jpeg" type="image/jpeg">
-  <meta property="og:title" content="NMR Real Estate">
-  <meta property="og:description" content="Farm Land, Palm Oil Land and Open Plots in Andhra Pradesh & Telangana">
-  <meta property="og:image" content="https://amarendra-wed.github.io/nmr-real-estate/nmr-logo.jpeg">
-  <meta property="og:url" content="https://amarendra-wed.github.io/nmr-real-estate/">
-  <meta property="og:type" content="website">
-  <title>NMR Real Estate | Farm Land, Palm Oil Land & Open Plots</title>
-
+  <title>NMR Real Estate</title>
   <style>
-    :root{--forest:#123b31;--gold:#d5a449;--paper:#f7f4ed;--ink:#18231f;--muted:#66736d}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,sans-serif;background:var(--paper);color:var(--ink)}
-    .hero{min-height:700px;padding:26px clamp(20px,6vw,78px) 88px;color:#fff;display:grid;grid-template-rows:auto 1fr;background:linear-gradient(90deg,rgba(8,37,29,.88),rgba(8,37,29,.32)),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover}
-    nav,.brand,.actions,.topline{display:flex;align-items:center}nav{justify-content:space-between}.brand{gap:11px;font-weight:800}.logo{width:55px;height:55px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}.links{display:flex;gap:25px}.links a{color:#fff;text-decoration:none;font-weight:bold}
-    .hero-copy{max-width:740px;align-self:center}h1{margin:0;font-size:clamp(3.2rem,8vw,6.5rem);line-height:.94}h2{font-size:clamp(2rem,4vw,3.1rem);margin:0}.hero-copy p,.copy{line-height:1.65}.hero-copy p{max-width:560px;font-size:1.1rem}
-    .actions{gap:11px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border:0;border-radius:7px;background:var(--gold);color:var(--ink);text-decoration:none;font-weight:bold;cursor:pointer}.outline{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.5)}.youtube{background:#c5302b;color:#fff}
-    main{width:min(1180px,calc(100% - 36px));margin:70px auto}.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}.section-head p,.copy{max-width:460px;color:var(--muted)}
-    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{overflow:hidden;background:#fff;border:1px solid #d6dfd9;border-radius:9px;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 15px 28px #0002}.card img{width:100%;aspect-ratio:1.38;object-fit:cover}.card-body{padding:18px}.topline{justify-content:space-between;gap:10px}.tag{padding:6px 9px;background:#e8f0eb;color:#155a49;border-radius:99px;font-size:.76rem;font-weight:bold}.price{color:#bd5542;font-weight:bold}h3{margin:16px 0 7px}.address{color:var(--muted)}.facts{border-top:1px solid #dbe2de;padding-top:14px;display:grid;grid-template-columns:repeat(3,1fr);color:var(--muted)}.facts strong{display:block;color:var(--ink)}
-    .market,.connect{margin-top:70px;display:grid;grid-template-columns:1fr 1fr;gap:24px}.market img{width:100%;height:100%;min-height:420px;object-fit:cover;border-radius:9px}.panel{padding:clamp(28px,5vw,48px);background:var(--forest);color:#fff;border-radius:9px}.panel p{line-height:1.7}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{padding:15px;border:1px solid #ffffff33;border-radius:7px}.stat strong{display:block;color:var(--gold);font-size:1.55rem}
-    .connect{padding:clamp(25px,5vw,44px);border:1px solid #d6dfd9;background:#fff;border-radius:9px}.connect-form{display:grid;gap:12px}input,select,textarea{width:100%;min-height:43px;padding:0 12px;border:1px solid #d6dfd9;border-radius:7px;font:inherit}textarea{min-height:112px;padding:12px}.note{color:#17634e;font-weight:bold}
-    .modal{display:none;position:fixed;inset:0;z-index:20;place-items:center;padding:20px;background:#0a1c19bb}.modal.open{display:grid}.modal-box{width:min(560px,100%);max-height:90vh;overflow:auto;padding:28px;background:#fff;border-radius:9px}.close{float:right;min-height:36px;background:#e8f0eb}
-    footer{padding:30px clamp(20px,6vw,78px);background:#155a49;color:#fff}footer p{margin:8px 0;color:#ffffffdd}
-    @media(max-width:850px){.listings,.market,.connect{grid-template-columns:1fr}.section-head{display:block}.links{display:none}}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f4ed;color:#18231f}
+    header{min-height:520px;padding:28px 7%;color:white;background:linear-gradient(90deg,#123b31dd,#123b3155),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover}
+    nav,.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #d5a449}.brand{display:flex;align-items:center;gap:10px;font-weight:bold}
+    h1{margin:120px 0 20px;font-size:clamp(3rem,8vw,6rem);max-width:750px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}.outline{background:#ffffff22;color:#fff;border:1px solid #fff8}.youtube{background:#c5302b;color:#fff}
+    main{width:min(1180px,92%);margin:70px auto}.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{overflow:hidden;background:#fff;border:1px solid #d6dfd9;border-radius:9px}.card img{width:100%;aspect-ratio:1.38;object-fit:cover}.card div{padding:18px}.tag{color:#155a49;font-weight:bold}.price{float:right;color:#bd5542;font-weight:bold}
+    .connect{margin-top:70px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px;background:#fff;border:1px solid #d6dfd9;border-radius:9px}input,select,textarea{width:100%;min-height:43px;margin:6px 0;padding:10px;border:1px solid #d6dfd9;border-radius:7px;font:inherit}textarea{min-height:100px}.modal{display:none;position:fixed;inset:0;z-index:10;place-items:center;padding:20px;background:#000a}.modal.open{display:grid}.box{width:min(540px,100%);padding:28px;background:#fff;border-radius:9px}.close{float:right}footer{padding:30px 7%;background:#155a49;color:#fff}
+    @media(max-width:800px){.listings,.connect{grid-template-columns:1fr}h1{margin-top:80px}}
   </style>
 </head>
-
 <body>
-  <header class="hero">
+  <header>
     <nav>
-      <div class="brand">
-        <img class="logo" src="nmr-logo.jpeg" alt="NMR Real Estate Logo">
-        <span>NMR REAL ESTATE</span>
-      </div>
-      <div class="links">
-        <a href="#listings">Land</a>
-        <a href="#market">Market</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Logo">NMR REAL ESTATE</div>
+      <div class="actions"><a class="button outline" href="tel:+919951212758">Call 99512 12758</a><button class="button book" type="button">Book appointment</button></div>
     </nav>
-
-    <section class="hero-copy">
-      <h1>Land for your next chapter.</h1>
-      <p>Explore farm land, palm oil plantations, open plots and commercial parcels across Andhra Pradesh and Telangana.</p>
-      <div class="actions">
-        <a class="button outline" href="tel:+919951212758">Call 99512 12758</a>
-        <button class="button book-button" type="button">Book appointment</button>
-        <a class="button youtube" href="https://youtube.com/@nmrrealestate-e6w?si=_t_5kFzZLIAzgXs8" target="_blank">Watch YouTube</a>
-      </div>
-    </section>
+    <h1>Land for your next chapter.</h1>
+    <p>Farm land, palm oil land, open plots and commercial properties in Andhra Pradesh and Telangana.</p>
   </header>
 
   <main>
-    <section id="listings">
-      <div class="section-head">
-        <h2>Featured land</h2>
-        <p>Selected listings with practical details for buyers and investors.</p>
-      </div>
-
-      <div class="listings">
-        <article class="card">
-          <img src="12ing.jpeg" loading="lazy" alt="Palm oil plantation">
-          <div class="card-body">
-            <div class="topline"><span class="tag">Palm oil land</span><span class="price">&#8377;32 lakh / acre</span></div>
-            <h3>AP Highway Venture Plot</h3>
-            <p class="address">Andhra Pradesh, India</p>
-            <div class="facts"><span><strong>2.4</strong>Acres</span><span><strong>Road</strong>Access</span><span><strong>R-1</strong>Zoning</span></div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="10img.jpeg" loading="lazy" alt="Farm land">
-          <div class="card-body">
-            <div class="topline"><span class="tag">Farm land</span><span class="price">&#8377;40 lakh / acre</span></div>
-            <h3>Telangana Farm Land Parcel</h3>
-            <p class="address">Telangana, India</p>
-            <div class="facts"><span><strong>38</strong>Acres</span><span><strong>Well</strong>Water</span><span><strong>AG</strong>Zoning</span></div>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="plot1.jpeg" loading="lazy" alt="Commercial land">
-          <div class="card-body">
-            <div class="topline"><span class="tag">Commercial land</span><span class="price">&#8377;1.35 Cr</span></div>
-            <h3>AP &amp; TG Roadfront Lot</h3>
-            <p class="address">Andhra Pradesh &amp; Telangana</p>
-            <div class="facts"><span><strong>6.8</strong>Acres</span><span><strong>Power</strong>Nearby</span><span><strong>C-2</strong>Zoning</span></div>
-          </div>
-        </article>
-      </div>
+    <h2>Featured land</h2>
+    <section class="listings">
+      <article class="card"><img src="12ing.jpeg" alt="Palm oil land"><div><span class="tag">Palm oil land</span><span class="price">₹32 lakh / acre</span><h3>AP Highway Venture Plot</h3><p>Andhra Pradesh, India</p></div></article>
+      <article class="card"><img src="10img.jpeg" alt="Farm land"><div><span class="tag">Farm land</span><span class="price">₹40 lakh / acre</span><h3>Telangana Farm Land Parcel</h3><p>Telangana, India</p></div></article>
+      <article class="card"><img src="plot1.jpeg" alt="Commercial land"><div><span class="tag">Commercial land</span><span class="price">₹1.35 Cr</span><h3>AP &amp; TG Roadfront Lot</h3><p>Andhra Pradesh &amp; Telangana</p></div></article>
     </section>
 
-    <section id="market" class="market">
-      <img src="https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=1100&q=80" alt="Cultivated land">
-      <div class="panel">
-        <h2>Know the land before you buy.</h2>
-        <p>Review road frontage, soil, flood considerations, nearby utilities and future growth before choosing a parcel.</p>
-        <div class="stats">
-          <div class="stat"><strong>18</strong>active parcels</div>
-          <div class="stat"><strong>240+</strong>acres available</div>
-          <div class="stat"><strong>11</strong>zoning types</div>
-          <div class="stat"><strong>32</strong>areas tracked</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="connect">
-      <div>
-        <h2>Connect with NMR</h2>
-        <p class="copy">Call us, watch our latest property videos, or send your land requirement below.</p>
-        <div class="actions">
-          <a class="button" href="tel:+919951212758">Call now</a>
-          <button class="button book-button" type="button">Book appointment</button>
-          <a class="button youtube" href="https://youtube.com/@nmrrealestate-e6w?si=_t_5kFzZLIAzgXs8" target="_blank">YouTube</a>
-        </div>
-      </div>
-
-      <form class="connect-form" id="enquiry-form">
-        <input required placeholder="Your name">
-        <input required type="tel" placeholder="Phone number">
-        <input placeholder="Preferred land location">
-        <textarea placeholder="Tell us what land you want to buy or sell"></textarea>
-        <button class="button" type="submit">Send enquiry</button>
-        <p class="note" id="enquiry-message"></p>
-      </form>
+    <section class="connect">
+      <div><h2>Connect with NMR</h2><p>Call us or send your land requirement.</p><button class="button book" type="button">Book appointment</button></div>
+      <form id="enquiry"><input required placeholder="Your name"><input required type="tel" placeholder="Phone number"><textarea placeholder="Your land requirement"></textarea><button class="button">Send enquiry</button></form>
     </section>
   </main>
 
-  <div class="modal" id="appointment-modal">
-    <div class="modal-box">
-      <button class="button close" id="close-appointment" type="button">Close</button>
+  <div class="modal" id="modal">
+    <div class="box">
+      <button class="button close" id="close" type="button">Close</button>
       <h2>Book an appointment</h2>
-      <p class="copy">Share your requirement and NMR Real Estate will contact you shortly.</p>
-
-      <form class="connect-form" id="appointment-form">
+      <form id="appointment">
         <input required name="name" placeholder="Your name">
         <input required name="phone" type="tel" placeholder="Phone number">
         <input required name="city" placeholder="Your city">
-
-        <select required name="landState">
-          <option value="">Land requirement (AP or TG)</option>
-          <option value="Andhra Pradesh">Andhra Pradesh (AP)</option>
-          <option value="Telangana">Telangana (TG)</option>
-        </select>
-
-        <select required name="budget">
-          <option value="">Your budget per acre</option>
-          <option>25L to 30L</option>
-          <option>30L to 35L</option>
-          <option>35L to 40L</option>
-        </select>
-
-        <button class="button" type="submit">Book appointment</button>
-        <p class="note" id="appointment-message"></p>
+        <select required name="landState"><option value="">Land requirement (AP or TG)</option><option value="Andhra Pradesh">Andhra Pradesh (AP)</option><option value="Telangana">Telangana (TG)</option></select>
+        <select required name="budget"><option value="">Your budget per acre</option><option>25L to 30L</option><option>30L to 35L</option><option>35L to 40L</option></select>
+        <button class="button">Book appointment</button>
+        <p id="message"></p>
       </form>
     </div>
   </div>
 
-  <footer>
-    <h3>NMR REAL ESTATE</h3>
-    <p>Phone: +91 99512 12758</p>
-    <p>Email: info@nmrrealestate.com</p>
-    <p>Andhra Pradesh &amp; Telangana</p>
-    <p>&copy; 2026 NMR Real Estate. All Rights Reserved.</p>
-  </footer>
+  <footer><strong>NMR REAL ESTATE</strong><p>Phone: +91 99512 12758</p><p>Andhra Pradesh &amp; Telangana</p></footer>
 
   <script>
-    const modal = document.getElementById("appointment-modal");
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbweJ_Gjt1FJDjetvwF90661wdGXR0GYDE-2vKF2YLM--H1rBvuXd8iuTwz6II12xJFipA/exec";
+    const modal=document.getElementById("modal");
+    document.querySelectorAll(".book").forEach(b=>b.onclick=()=>modal.classList.add("open"));
+    document.getElementById("close").onclick=()=>modal.classList.remove("open");
 
-    document.querySelectorAll(".book-button").forEach(button => {
-      button.addEventListener("click", () => modal.classList.add("open"));
-    });
-
-    document.getElementById("close-appointment").addEventListener("click", () => {
-      modal.classList.remove("open");
-    });
-
-    modal.addEventListener("click", event => {
-      if (event.target === modal) modal.classList.remove("open");
-    });
-
-    document.getElementById("appointment-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      fetch(scriptUrl, {
-        method: "POST",
-        mode: "no-cors",
-        body: new URLSearchParams(new FormData(this))
+    document.getElementById("appointment").onsubmit=function(e){
+      e.preventDefault();
+      fetch("https://script.google.com/macros/s/AKfycbwsSz5uFCCmh96j1-Hhhive3l3NShOIaLTA0anxQdq4NAQooW4wkpqLvNlq9LEFu0pjBA/exec",{
+        method:"POST",mode:"no-cors",body:new URLSearchParams(new FormData(this))
       });
-
-      document.getElementById("appointment-message").textContent =
-        "Thank you. Your appointment request has been sent.";
+      document.getElementById("message").textContent="Thank you. Your appointment request has been sent.";
       this.reset();
-    });
+    };
 
-    document.getElementById("enquiry-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      document.getElementById("enquiry-message").textContent =
-        "Thank you. NMR will contact you shortly.";
-      this.reset();
-    });
+    document.getElementById("enquiry").onsubmit=function(e){
+      e.preventDefault();alert("Thank you. NMR will contact you shortly.");this.reset();
+    };
   </script>
 </body>
 </html>
