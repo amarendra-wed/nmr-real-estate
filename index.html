@@ -9,6 +9,7 @@
   <meta name="theme-color" content="#123b31">
   <link rel="canonical" href="https://amarendra-wed.github.io/nmr-real-estate/">
   <link rel="icon" href="nmr-logo.jpeg" type="image/jpeg">
+
   <meta property="og:title" content="NMR Real Estate">
   <meta property="og:description" content="Farm Land, Palm Oil Land and Open Plots in Andhra Pradesh &amp; Telangana">
   <meta property="og:image" content="https://amarendra-wed.github.io/nmr-real-estate/nmr-logo.jpeg">
@@ -27,12 +28,17 @@
     .hero {
       min-height:700px; color:#fff; padding:26px clamp(20px,6vw,78px) 88px;
       display:grid; grid-template-rows:auto 1fr;
-      background:linear-gradient(90deg,rgba(8,37,29,.88),rgba(8,37,29,.32)),
-      url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover;
+      background:
+        linear-gradient(90deg,rgba(8,37,29,.88),rgba(8,37,29,.32)),
+        url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover;
     }
 
     nav { display:flex; justify-content:space-between; align-items:center; gap:18px; }
-    .brand { display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:.04em; }
+
+    .brand {
+      display:flex; align-items:center; gap:11px;
+      font-weight:800; letter-spacing:.04em;
+    }
 
     .brand-mark {
       width:48px; height:48px; display:grid; place-items:center;
@@ -61,8 +67,9 @@
     }
 
     .hero-copy p {
-      max-width:560px; margin:25px 0 30px; font-size:1.1rem;
-      line-height:1.65; color:rgba(255,255,255,.88);
+      max-width:560px; margin:25px 0 30px;
+      font-size:1.1rem; line-height:1.65;
+      color:rgba(255,255,255,.88);
     }
 
     .actions { display:flex; flex-wrap:wrap; gap:11px; }
@@ -82,11 +89,10 @@
     .button.youtube { color:#fff; background:#c5302b; }
 
     .search {
-      width:min(1080px,calc(100% - 36px)); margin:-43px auto 68px;
+      width:min(620px,calc(100% - 36px)); margin:-43px auto 68px;
       padding:16px; position:relative; display:grid;
-      grid-template-columns:1.35fr 1fr 1fr auto; gap:12px;
-      background:#fff; border-radius:9px;
-      box-shadow:0 18px 42px rgba(20,38,31,.16);
+      grid-template-columns:1fr auto; gap:12px; background:#fff;
+      border-radius:9px; box-shadow:0 18px 42px rgba(20,38,31,.16);
     }
 
     label {
@@ -159,7 +165,8 @@
     }
 
     .market {
-      margin-top:70px; display:grid; grid-template-columns:1fr 1fr; gap:24px;
+      margin-top:70px; display:grid;
+      grid-template-columns:1fr 1fr; gap:24px;
     }
 
     .market img {
@@ -173,9 +180,7 @@
       display:grid; align-content:center; gap:20px;
     }
 
-    .panel p {
-      margin:0; color:rgba(255,255,255,.8); line-height:1.7;
-    }
+    .panel p { margin:0; color:rgba(255,255,255,.8); line-height:1.7; }
 
     .stats { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
 
@@ -183,9 +188,7 @@
       padding:15px; border:1px solid rgba(255,255,255,.2); border-radius:7px;
     }
 
-    .stat strong {
-      display:block; color:var(--gold); font-size:1.55rem;
-    }
+    .stat strong { display:block; color:var(--gold); font-size:1.55rem; }
 
     .connect {
       margin-top:70px; padding:clamp(25px,5vw,44px);
@@ -196,9 +199,7 @@
     .connect .copy { margin:17px 0 24px; }
     .connect-form { display:grid; gap:12px; }
 
-    textarea {
-      min-height:112px; padding:12px; resize:vertical;
-    }
+    textarea { min-height:112px; padding:12px; resize:vertical; }
 
     .note {
       min-height:1.2em; margin:0; color:#17634e; font-weight:700;
@@ -258,9 +259,17 @@
 
   <form class="search" id="search-form">
     <div>
-     
+      <label for="size">Land size</label>
+      <select id="size">
+        <option value="">Any size</option>
+        <option value="small">1 to 10 acres</option>
+        <option value="medium">10 to 30 acres</option>
+        <option value="large">30+ acres</option>
       </select>
-    
+    </div>
+
+    <button class="button" type="submit">Search land</button>
+  </form>
 
   <main>
     <section id="listings">
@@ -272,10 +281,9 @@
       <p id="result-message" class="note" aria-live="polite"></p>
 
       <div class="listings">
-        <article class="card" data-type="Palm oil land" data-size="small" data-location="Andhra Pradesh">
+        <article class="card" data-size="small">
           <img src="12ing.jpeg" loading="lazy" alt="Palm oil plantation"
             onerror="this.src='https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80'">
-
           <div class="card-body">
             <div class="topline">
               <span class="tag">Palm oil land</span>
@@ -283,7 +291,6 @@
             </div>
             <h3>AP Highway Venture Plot</h3>
             <p class="address">Andhra Pradesh, India</p>
-
             <div class="facts">
               <span><strong>2.4</strong>Acres</span>
               <span><strong>Road</strong>Access</span>
@@ -292,10 +299,9 @@
           </div>
         </article>
 
-        <article class="card" data-type="Farm land" data-size="large" data-location="Telangana">
+        <article class="card" data-size="large">
           <img src="10img.jpeg" loading="lazy" alt="Green farm land"
             onerror="this.src='https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=900&q=80'">
-
           <div class="card-body">
             <div class="topline">
               <span class="tag">Farm land</span>
@@ -303,7 +309,6 @@
             </div>
             <h3>Telangana Farm Land Parcel</h3>
             <p class="address">Telangana, India</p>
-
             <div class="facts">
               <span><strong>38</strong>Acres</span>
               <span><strong>Well</strong>Water</span>
@@ -312,10 +317,9 @@
           </div>
         </article>
 
-        <article class="card" data-type="Commercial land" data-size="small" data-location="AP and TG">
+        <article class="card" data-size="small">
           <img src="plot1.jpeg" loading="lazy" alt="Open field beside a road"
             onerror="this.src='https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&w=900&q=80'">
-
           <div class="card-body">
             <div class="topline">
               <span class="tag">Commercial land</span>
@@ -323,7 +327,6 @@
             </div>
             <h3>AP &amp; TG Roadfront Lot</h3>
             <p class="address">Andhra Pradesh &amp; Telangana</p>
-
             <div class="facts">
               <span><strong>6.8</strong>Acres</span>
               <span><strong>Power</strong>Nearby</span>
@@ -418,17 +421,11 @@
     document.getElementById("search-form").addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const place = document.getElementById("location").value.trim().toLowerCase();
-      const type = document.getElementById("type").value;
       const size = document.getElementById("size").value;
       let count = 0;
 
       document.querySelectorAll(".card").forEach(card => {
-        const match =
-          (!place || card.dataset.location.toLowerCase().includes(place)) &&
-          (!type || card.dataset.type === type) &&
-          (!size || card.dataset.size === size);
-
+        const match = !size || card.dataset.size === size;
         card.hidden = !match;
         if (match) count++;
       });
