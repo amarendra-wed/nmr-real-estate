@@ -9,7 +9,6 @@
   <meta name="description" content="Secure your income with real earth. Premium agricultural land, palm oil plantations, and highway-facing plots in Andhra Pradesh and Telangana.">
 
   <!-- Global site tag (gtag.js) - Google Ads: Tracking Code -->
-  <!-- REPLACE AW-123456789 WITH YOUR ACTUAL GOOGLE ADS TRACKING ID BEFORE LAUNCHING -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-123456789"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,23 +19,25 @@
 
   <style>
     *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f4ed;color:#18231f}
-    
-    /* NOTE: You can replace this unsplash URL with a custom drone shot/photo of your lands later */
     header{min-height:520px;padding:28px 7%;color:white;background:linear-gradient(90deg,#123b31dd,#123b3155),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover}
     
     nav,.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     .logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #d5a449}.brand{display:flex;align-items:center;gap:10px;font-weight:bold}
-    h1{margin:120px 0 20px;font-size:clamp(2.5rem,6vw,4.5rem);max-width:850px;line-height:1.2}.button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}
+    h1{margin:120px 0 20px;font-size:clamp(2.5rem,6vw,4.5rem);max-width:850px;line-height:1.2}
+    
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}
+    
+    /* YouTube Brand Styling */
+    .button.youtube{background:#c5302b;color:#fff}
+    
     main{width:min(1180px,92%);margin:70px auto}
     
-    /* Widescreen 16:9 aspect-ratio to display your banner graphics cleanly without side crops */
     .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{overflow:hidden;background:#fff;border:1px solid #d6dfd9;border-radius:9px}
     .card img{width:100%;aspect-ratio:16 / 9;object-fit:cover}
     .card div{padding:18px}
     .tag{color:#155a49;font-weight:bold}
     .price{float:right;color:#bd5542;font-weight:bold}
     
-    /* Lower call-to-action panel replacing the original enquiry box */
     .bottom-actions{margin-top:50px;text-align:center;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
     .bottom-actions .button{font-size:1.1rem;padding:0 30px;min-height:50px}
     .bottom-actions .call-btn{background:#155a49;color:#fff}
@@ -49,9 +50,12 @@
   <header>
     <nav>
       <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Logo">NMR REAL ESTATE</div>
-      <div class="actions"><button class="button book" type="button">Book appointment</button></div>
+      <div class="actions">
+        <!-- Live YouTube Channel Link -->
+        <a class="button youtube" href="https://youtube.com/@nmrrealestate-e6w?si=qIdD_rh9aDeBlBoD" target="_blank">Watch Videos</a>
+        <button class="button book" type="button">Book appointment</button>
+      </div>
     </nav>
-    <!-- Engaging, High-Intent Header Text -->
     <h1>Secure Your Income with Real Earth.</h1>
     <p>From high-value highway-facing plots to ready-to-harvest palm oil and mango orchards in AP & TG. Don't just buy land—buy a lifelong revenue source.</p>
   </header>
@@ -59,7 +63,7 @@
   <main>
     <h2>Featured land</h2>
     <section class="listings">
-      <!-- Card 1 (12ing.jpeg) -->
+      <!-- Card 1 -->
       <article class="card">
         <img src="12ing.jpeg" alt="Palm oil land">
         <div>
@@ -70,7 +74,7 @@
         </div>
       </article>
       
-      <!-- Card 2 (10img.jpeg) -->
+      <!-- Card 2 -->
       <article class="card">
         <img src="10img.jpeg" alt="Highway Facing land">
         <div>
@@ -81,7 +85,7 @@
         </div>
       </article>
       
-      <!-- Card 3 (85img.jpeg) -->
+      <!-- Card 3 -->
       <article class="card">
         <img src="85img.jpeg" alt="Mango Orchard and Open Land">
         <div>
@@ -93,14 +97,14 @@
       </article>
     </section>
 
-    <!-- Unified call & booking actions perfectly situated under content blocks -->
     <section class="bottom-actions">
       <a class="button call-btn" href="tel:+919951212758">Call 99512 12758</a>
+      <!-- Live YouTube Channel Link -->
+      <a class="button youtube" href="https://youtube.com/@nmrrealestate-e6w?si=qIdD_rh9aDeBlBoD" target="_blank">Visit YouTube Channel</a>
       <button class="button book" type="button">Book appointment</button>
     </section>
   </main>
 
-  <!-- Interactive Lead Modal -->
   <div class="modal" id="modal">
     <div class="box">
       <button class="button close" id="close" type="button">Close</button>
@@ -138,20 +142,14 @@
 
     document.getElementById("appointment").onsubmit=function(e){
       e.preventDefault();
-      
-      // Submit data to your live Google Sheet database
       fetch("https://script.google.com/macros/s/AKfycbwsSz5uFCCmh96j1-Hhhive3l3NShOIaLTA0anxQdq4NAQooW4wkpqLvNlq9LEFu0pjBA/exec",{
         method:"POST",mode:"no-cors",body:new URLSearchParams(new FormData(this))
       });
-      
-      // Google Ads Conversion tracking trigger
-      // REPLACE 'YourConversionLabelHere' WITH YOUR ACTUAL GOOGLE CONVERSION LABEL
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
           'send_to': 'AW-123456789/YourConversionLabelHere'
         });
       }
-
       document.getElementById("message").textContent="Thank you. Your appointment request has been sent.";
       this.reset();
     };
