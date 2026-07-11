@@ -9,8 +9,14 @@
     header{min-height:520px;padding:28px 7%;color:white;background:linear-gradient(90deg,#123b31dd,#123b3155),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover}
     nav,.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     .logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #d5a449}.brand{display:flex;align-items:center;gap:10px;font-weight:bold}
-    h1{margin:120px 0 20px;font-size:clamp(3rem,8vw,6rem);max-width:750px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}.outline{background:#ffffff22;color:#fff;border:1px solid #fff8}.youtube{background:#c5302b;color:#fff}
-    main{width:min(1180px,92%);margin:70px auto}.listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{overflow:hidden;background:#fff;border:1px solid #d6dfd9;border-radius:9px}.card img{width:100%;aspect-ratio:1.38;object-fit:cover}.card div{padding:18px}.tag{color:#155a49;font-weight:bold}.price{float:right;color:#bd5542;font-weight:bold}
+    h1{margin:120px 0 20px;font-size:clamp(3rem,8vw,6rem);max-width:750px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}.outline{background:#ffffff22;color:#fff;border:1px solid #fff8}
+    main{width:min(1180px,92%);margin:70px auto}
+    
+    /* FIX: Changed aspect-ratio to 16/9 to perfectly fit your banner graphics */
+    .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{overflow:hidden;background:#fff;border:1px solid #d6dfd9;border-radius:9px}
+    .card img{width:100%;aspect-ratio:16 / 9;object-fit:cover}
+    
+    .card div{padding:18px}.tag{color:#155a49;font-weight:bold}.price{float:right;color:#bd5542;font-weight:bold}
     .connect{margin-top:70px;padding:35px;display:grid;grid-template-columns:1fr 1fr;gap:30px;background:#fff;border:1px solid #d6dfd9;border-radius:9px}input,select,textarea{width:100%;min-height:43px;margin:6px 0;padding:10px;border:1px solid #d6dfd9;border-radius:7px;font:inherit}textarea{min-height:100px}.modal{display:none;position:fixed;inset:0;z-index:10;place-items:center;padding:20px;background:#000a}.modal.open{display:grid}.box{width:min(540px,100%);padding:28px;background:#fff;border-radius:9px}.close{float:right}footer{padding:30px 7%;background:#155a49;color:#fff}
     @media(max-width:800px){.listings,.connect{grid-template-columns:1fr}h1{margin-top:80px}}
   </style>
@@ -28,14 +34,53 @@
   <main>
     <h2>Featured land</h2>
     <section class="listings">
-      <article class="card"><img src="12ing.jpeg" alt="Palm oil land"><div><span class="tag">Palm oil land</span><span class="price">₹32 lakh / acre</span><h3>AP Highway Venture Plot</h3><p>Andhra Pradesh, India</p></div></article>
-      <article class="card"><img src="10img.jpeg" alt="Farm land"><div><span class="tag">Farm land</span><span class="price">₹40 lakh / acre</span><h3>Telangana Farm Land Parcel</h3><p>Telangana, India</p></div></article>
-      <article class="card"><img src="85img.jpeg" alt="Commercial land"><div><span class="tag">Commercial land</span><span class="price">₹1.35 Cr</span><h3>AP &amp; TG Roadfront Lot</h3><p>Andhra Pradesh &amp; Telangana</p></div></article>
+      <!-- Card 1 (12ing.jpeg) -->
+      <article class="card">
+        <img src="12ing.jpeg" alt="Palm oil land">
+        <div>
+          <span class="tag">Palm Oil Plantation</span>
+          <span class="price">₹32 Lakh / Acre</span>
+          <h3>13 Acres Palm Oil Orchard</h3>
+          <p>Near Vissannapeta (10-15 KM)</p>
+        </div>
+      </article>
+      
+      <!-- Card 2 (10img.jpeg) -->
+      <article class="card">
+        <img src="10img.jpeg" alt="Highway Facing land">
+        <div>
+          <span class="tag">Highway Facing</span>
+          <span class="price">₹40 Lakh / Acre</span>
+          <h3>10 Acres Palm Oil Farm</h3>
+          <p>High-Value Income Investment</p>
+        </div>
+      </article>
+      
+      <!-- Card 3 (85img.jpeg) -->
+      <article class="card">
+        <img src="85img.jpeg" alt="Mango Orchard and Open Land">
+        <div>
+          <span class="tag">Mango &amp; Open Land</span>
+          <span class="price">₹44 Lakh / Acre</span>
+          <h3>85 Acres Farmland Parcel</h3>
+          <p>40 Ac Mango Trees + 45 Ac Clear Land</p>
+        </div>
+      </article>
     </section>
 
     <section class="connect">
-      <div><h2>Connect with NMR</h2><p>Call us or send your land requirement.</p><button class="button book" type="button">Book appointment</button></div>
-      <form id="enquiry"><input required placeholder="Your name"><input required type="tel" placeholder="Phone number"><textarea placeholder="Your land requirement"></textarea><button class="button">Send enquiry</button></form>
+      <div>
+        <h2>Connect with NMR</h2>
+        <p>Call us or send your land requirement.</p>
+        <button class="button book" type="button">Book appointment</button>
+      </div>
+      <!-- Added 'name' attributes so form submissions capture data properly -->
+      <form id="enquiry">
+        <input required name="clientName" placeholder="Your name">
+        <input required name="clientPhone" type="tel" placeholder="Phone number">
+        <textarea name="requirement" placeholder="Your land requirement"></textarea>
+        <button class="button">Send enquiry</button>
+      </form>
     </section>
   </main>
 
@@ -47,8 +92,18 @@
         <input required name="name" placeholder="Your name">
         <input required name="phone" type="tel" placeholder="Phone number">
         <input required name="city" placeholder="Your city">
-        <select required name="landState"><option value="">Land requirement (AP or TG)</option><option value="Andhra Pradesh">Andhra Pradesh (AP)</option><option value="Telangana">Telangana (TG)</option></select>
-        <select required name="budget"><option value="">Your budget per acre</option><option>25L to 30L</option><option>30L to 35L</option><option>35L to 40L</option></select>
+        <select required name="landState">
+          <option value="">Land requirement (AP or TG)</option>
+          <option value="Andhra Pradesh">Andhra Pradesh (AP)</option>
+          <option value="Telangana">Telangana (TG)</option>
+        </select>
+        <select required name="budget">
+          <option value="">Your budget per acre</option>
+          <option>25L to 30L</option>
+          <option>30L to 35L</option>
+          <option>35L to 40L</option>
+          <option>40L to 45L</option>
+        </select>
         <button class="button">Book appointment</button>
         <p id="message"></p>
       </form>
@@ -72,7 +127,9 @@
     };
 
     document.getElementById("enquiry").onsubmit=function(e){
-      e.preventDefault();alert("Thank you. NMR will contact you shortly.");this.reset();
+      e.preventDefault();
+      alert("Thank you. NMR will contact you shortly.");
+      this.reset();
     };
   </script>
 </body>
