@@ -9,6 +9,7 @@
   <meta name="description" content="Secure your income with real earth. Premium agricultural land, palm oil plantations, and highway-facing plots in Andhra Pradesh and Telangana.">
 
   <!-- Global site tag (gtag.js) - Google Ads: Tracking Code -->
+  <!-- REPLACE AW-123456789 WITH YOUR ACTUAL GOOGLE ADS TRACKING ID BEFORE LAUNCHING -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-123456789"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,7 +20,10 @@
 
   <style>
     *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f4ed;color:#18231f}
+    
+    /* NOTE: You can replace this unsplash URL with a custom drone shot/photo of your lands later */
     header{min-height:520px;padding:28px 7%;color:white;background:linear-gradient(90deg,#123b31dd,#123b3155),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover}
+    
     nav,.actions{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     .logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #d5a449}.brand{display:flex;align-items:center;gap:10px;font-weight:bold}
     h1{margin:120px 0 20px;font-size:clamp(2.5rem,6vw,4.5rem);max-width:850px;line-height:1.2}.button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}
@@ -47,7 +51,7 @@
       <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Logo">NMR REAL ESTATE</div>
       <div class="actions"><button class="button book" type="button">Book appointment</button></div>
     </nav>
-    <!-- New Engaging, High-Intent Header Text -->
+    <!-- Engaging, High-Intent Header Text -->
     <h1>Secure Your Income with Real Earth.</h1>
     <p>From high-value highway-facing plots to ready-to-harvest palm oil and mango orchards in AP & TG. Don't just buy land—buy a lifelong revenue source.</p>
   </header>
@@ -111,11 +115,13 @@
           <option value="Telangana">Telangana (TG)</option>
         </select>
         <select required name="budget">
-          <option value="">Your budget per acre</option>
-          <option>25L to 30L</option>
-          <option>30L to 35L</option>
-          <option>35L to 40L</option>
-          <option>40L to 45L</option>
+          <option value="">Your budget per acre / total</option>
+          <option>25L to 30L per acre</option>
+          <option>30L to 35L per acre</option>
+          <option>35L to 40L per acre</option>
+          <option>40L to 45L per acre</option>
+          <option>45L+ per acre</option>
+          <option>1 Crore+ (Commercial/Venture)</option>
         </select>
         <button class="button">Book appointment</button>
         <p id="message"></p>
@@ -139,6 +145,7 @@
       });
       
       // Google Ads Conversion tracking trigger
+      // REPLACE 'YourConversionLabelHere' WITH YOUR ACTUAL GOOGLE CONVERSION LABEL
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
           'send_to': 'AW-123456789/YourConversionLabelHere'
