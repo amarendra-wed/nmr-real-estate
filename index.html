@@ -30,6 +30,9 @@
     
     .button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}
     
+    /* YouTube Brand Styling */
+    .button.youtube{background:#c5302b;color:#fff}
+    
     main{width:min(1180px,92%);margin:70px auto}
     
     .listings{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -40,7 +43,7 @@
     .price{float:right;color:#bd5542;font-weight:bold}
     
     .bottom-actions{margin-top:50px;text-align:center;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
-    .bottom-actions .button{font-size:1.1rem;padding:0 40px;min-height:52px}
+    .bottom-actions .button{font-size:1.1rem;padding:0 30px;min-height:50px}
     
     /* Inline Form Section Styling */
     .form-container{background:#fff;border:1px solid #d6dfd9;border-radius:9px;padding:35px;margin-top:70px;max-width:600px;margin-left:auto;margin-right:auto}
@@ -59,7 +62,6 @@
   <header>
     <nav>
       <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Logo">NMR REAL ESTATE</div>
-      <!-- Top nav button removed successfully -->
     </nav>
     <h1>Secure Your Income with Real Earth.</h1>
     <p>From high-value highway-facing plots to ready-to-harvest palm oil and mango orchards in AP & TG. Don't just buy land—buy a lifelong revenue source.</p>
@@ -102,8 +104,9 @@
       </article>
     </section>
 
-    <!-- Only one focused action button left here -->
+    <!-- Both buttons kept safely below listings -->
     <section class="bottom-actions">
+      <a class="button youtube" href="https://youtube.com/@nmrrealestate-e6w?si=qIdD_rh9aDeBlBoD" target="_blank">Watch Videos</a>
       <a class="button" href="#visit-form">Book site visit</a>
     </section>
 
