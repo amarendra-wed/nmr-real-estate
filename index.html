@@ -76,6 +76,7 @@
   <header>
     <nav>
       <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Logo">NMR REAL ESTATE</div>
+      <!-- Book site visit button in top right corner -->
       <a class="button" href="#visit-form">Book site visit</a>
     </nav>
 
@@ -120,6 +121,7 @@
       </article>
     </section>
 
+    <!-- YouTube button remains here -->
     <section class="bottom-actions">
       <a class="button youtube" href="https://youtube.com/@nmrrealestate-e6w?si=qIdD_rh9aDeBlBoD" target="_blank">Watch Videos</a>
     </section>
@@ -156,14 +158,26 @@
   <script>
     document.getElementById("appointment").onsubmit=function(e){
       e.preventDefault();
+      
+      // Send data to Google Sheet
       fetch("https://script.google.com/macros/s/AKfycbwsSz5uFCCmh96j1-Hhhive3l3NShOIaLTA0anxQdq4NAQooW4wkpqLvNlq9LEFu0pjBA/exec",{
         method:"POST",mode:"no-cors",body:new URLSearchParams(new FormData(this))
       });
+      
+      // Standard Google Ads Conversion fallback
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', {
           'send_to': 'AW-123456789/YourConversionLabelHere'
         });
       }
+
+      // GTM Fix: Manually push custom event to dataLayer
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'form_submitted',
+        'formId': 'appointment'
+      });
+
       document.getElementById("message").textContent="Thank you. Your site visit request has been sent.";
       this.reset();
     };
