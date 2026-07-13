@@ -17,11 +17,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   
-  <!-- SEO Optimization: Helps Google index your business properly -->
   <title>NMR Real Estate | Premium Farm Land & Palm Oil Plots</title>
   <meta name="description" content="Secure your income with real earth. Premium agricultural land, palm oil plantations, and highway-facing plots in Andhra Pradesh and Telangana.">
-
-  <!-- Browser Tab Icon (Favicon) Fix -->
   <link rel="icon" type="image/jpeg" href="nmr-logo.jpeg">
 
   <!-- Global site tag (gtag.js) - Google Ads: Tracking Code -->
@@ -43,8 +40,6 @@
     h1{margin:120px 0 20px;font-size:clamp(2.5rem,6vw,4.5rem);max-width:850px;line-height:1.2}
     
     .button{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:0 18px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;cursor:pointer}
-    
-    /* YouTube Brand Styling */
     .button.youtube{background:#c5302b;color:#fff}
     
     main{width:min(1180px,92%);margin:70px auto}
@@ -59,14 +54,12 @@
     .bottom-actions{margin-top:50px;text-align:center;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
     .bottom-actions .button{font-size:1.1rem;padding:0 30px;min-height:50px}
     
-    /* Inline Form Section Styling */
     .form-container{background:#fff;border:1px solid #d6dfd9;border-radius:9px;padding:35px;margin-top:70px;max-width:600px;margin-left:auto;margin-right:auto}
     .form-container h2{margin-top:0;color:#155a49;text-align:center}
     
     input,select,textarea{width:100%;min-height:43px;margin:10px 0;padding:10px;border:1px solid #d6dfd9;border-radius:7px;font:inherit}
     .form-container .button{width:100%;margin-top:10px;min-height:48px;font-size:1.05rem}
     
-    #message{text-align:center;font-weight:bold;color:#155a49;margin-top:15px}
     footer{padding:30px 7%;background:#155a49;color:#fff}
     
     @media(max-width:800px){.listings{grid-template-columns:1fr}h1{margin-top:80px}.bottom-actions{flex-direction:column;align-items:stretch}.bottom-actions .button{width:100%}.form-container{padding:20px}}
@@ -151,7 +144,6 @@
           <option>1 Crore+ (Commercial/Venture)</option>
         </select>
         <button class="button" type="submit">Book site visit</button>
-        <p id="message"></p>
       </form>
     </section>
   </main>
@@ -162,24 +154,24 @@
     document.getElementById("appointment").onsubmit=function(e){
       e.preventDefault();
       
-      // 1. GTM Fire FIRST before any fetch routines to guarantee tracking fires
+      // 1. Send dataLayer event to GTM instantly
       window.dataLayer.push({
         'event': 'form_submitted',
         'formId': 'appointment'
       });
       
-      // 2. Send data to Google Sheet script background
+      // 2. Send background data to Google Sheets script
       fetch("https://script.google.com/macros/s/AKfycbwsSz5uFCCmh96j1-Hhhive3l3NShOIaLTA0anxQdq4NAQooW4wkpqLvNlq9LEFu0pjBA/exec",{
         method:"POST",mode:"no-cors",body:new URLSearchParams(new FormData(this))
       });
       
-      // 3. Fallback tracking call
+      // 3. Fallback direct global tracking call
       if (typeof gtag === 'function') {
-        gtag('event', 'conversion', { 'send_to': 'AW-123456789/YourConversionLabelHere' });
+        gtag('event', 'conversion', { 'send_to': 'AW-123456789/ConversionLabel' });
       }
 
-      document.getElementById("message").textContent="Thank you. Your site visit request has been sent.";
-      this.reset();
+      // 4. Redirect smoothly to the Thank You Page file
+      window.location.href = "thankyou.html"; 
     };
   </script>
 </body>
