@@ -163,11 +163,11 @@
         'formId': 'appointment'
       });
       
-      // 2. Prepare Form Data explicitly to eliminate any invisible character bugs
+      // 2. Prepare Form Data explicitly
       var formData = new FormData(this);
       
-      // 3. Send data background data to Google Sheets script via fetch API
-      fetch("https://docs.google.com/spreadsheets/d/1nzOsj8_102vMwCxxNNkWkSiTbpIJ5TA33HvOQ1y5Wfs/edit?gid=0#gid=0", {
+      // 3. Send data background data to the GOOGLE APPS SCRIPT WEB APP (Replace URL below)
+      fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
         method: "POST",
         mode: "no-cors",
         body: new URLSearchParams(formData)
