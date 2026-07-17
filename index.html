@@ -167,8 +167,7 @@
       var formData = new FormData(this);
       
       // 3. Send data background data to Google Sheets script Web App URL
-      // !!! ERASE THE PLACEHOLDER BELOW AND PASTE YOUR COPIED DEPLOYMENT URL HERE !!!
-      fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
+      fetch("https://script.google.com/macros/s/AKfycbyNZHt0_yxbPIb_A7vZwC3BEMooVeCDl5ahmbpFLPLdDfEwmdKIqoAVH6LWOybqn2xa/exec", {
         method: "POST",
         mode: "no-cors",
         body: new URLSearchParams(formData)
