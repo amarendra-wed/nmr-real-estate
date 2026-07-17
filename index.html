@@ -166,7 +166,7 @@
       // 2. Prepare clean form data
       var formData = new FormData(this);
       
-      // 3. Send data background data to your live Google Sheets script Web App URL
+      // 3. Send background data to your correct Google Sheets Web App URL
       fetch("https://script.google.com/macros/s/AKfycbwCpj-CUqNmmO5BHjws5llbA-8Emh3Wa_s6EW4xRn6TuiFv3UoucaW7eVMoaQ6bUz1f/exec", {
         method: "POST",
         mode: "no-cors",
@@ -178,9 +178,8 @@
         gtag('event', 'conversion', { 'send_to': 'AW-123456789/ConversionLabel' });
       }
 
-      // 5. Package the data string and redirect cleanly to show results on thank you page
-      var searchParams = new URLSearchParams(formData).toString();
-      window.location.href = "thankyou.html?" + searchParams; 
+      // 5. Redirect smoothly to your Thank You page file
+      window.location.href = "thankyou.html"; 
     };
   </script>
 </body>
