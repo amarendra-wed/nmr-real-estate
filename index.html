@@ -79,7 +79,6 @@
       <a class="button" href="#visit-form">Book site visit</a>
     </nav>
 
-    <!-- Updated Header Content -->
     <h1>Your Land, Your Future</h1>
     <p>Explore trusted farm land, orchards, and investment plots in Andhra Pradesh and Telangana.</p>
     <p class="sub-text">Find verified agricultural land with clear details, site visit support, and long-term investment potential.</p>
@@ -130,9 +129,9 @@
     <section class="form-container" id="visit-form">
       <h2>Book a site visit</h2>
       <form id="appointment">
-        <input required name="name" placeholder="Your name">
-        <input required name="phone" type="tel" placeholder="Phone number">
-        <input required name="city" placeholder="Your city">
+        <input type="text" required name="name" placeholder="Your name">
+        <input type="tel" required name="phone" placeholder="Phone number">
+        <input type="text" required name="city" placeholder="Your city">
         <select required name="landState">
           <option value="">Land requirement (AP or TG)</option>
           <option value="Andhra Pradesh">Andhra Pradesh (AP)</option>
@@ -140,12 +139,12 @@
         </select>
         <select required name="budget">
           <option value="">Your budget per acre / total</option>
-          <option>25L to 30L per acre</option>
-          <option>30L to 35L per acre</option>
-          <option>35L to 40L per acre</option>
-          <option>40L to 45L per acre</option>
-          <option>45L+ per acre</option>
-          <option>1 Crore+ (Commercial/Venture)</option>
+          <option value="25L to 30L per acre">25L to 30L per acre</option>
+          <option value="30L to 35L per acre">30L to 35L per acre</option>
+          <option value="35L to 40L per acre">35L to 40L per acre</option>
+          <option value="40L to 45L per acre">40L to 45L per acre</option>
+          <option value="45L+ per acre">45L+ per acre</option>
+          <option value="1 Crore+ (Commercial/Venture)">1 Crore+ (Commercial/Venture)</option>
         </select>
         <button class="button" type="submit">Book site visit</button>
       </form>
@@ -155,7 +154,7 @@
   <footer><strong>NMR REAL ESTATE</strong><p>Phone: +91 99512 12758</p><p>Andhra Pradesh &amp; Telangana</p></footer>
 
   <script>
-    document.getElementById("appointment").onsubmit=function(e){
+    document.getElementById("appointment").onsubmit = function(e){
       e.preventDefault();
       
       // 1. Send dataLayer event to GTM instantly
@@ -164,17 +163,22 @@
         'formId': 'appointment'
       });
       
-      // 2. Send background data to Google Sheets script
-      fetch("https://script.google.com/macros/s/AKfycbwsSz5uFCCmh96j1-Hhhive3l3NShOIaLTA0anxQdq4NAQooW4wkpqLvNlq9LEFu0pjBA/exec",{
-        method:"POST",mode:"no-cors",body:new URLSearchParams(new FormData(this))
+      // 2. Prepare Form Data explicitly to eliminate any invisible character bugs
+      var formData = new FormData(this);
+      
+      // 3. Send data background data to Google Sheets script via fetch API
+      fetch("https://script.google.com/macros/s/AKfycbwsSz5uFCCmh96j1-Hhhive3l3NShOIaLTA0anxQdq4NAQooW4wkpqLvNlq9LEFu0pjBA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams(formData)
       });
       
-      // 3. Fallback direct global tracking call
+      // 4. Fallback direct global tracking call
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', { 'send_to': 'AW-123456789/ConversionLabel' });
       }
 
-      // 4. Redirect smoothly to the Thank You Page file
+      // 5. Redirect smoothly to the Thank You Page file
       window.location.href = "thankyou.html"; 
     };
   </script>
