@@ -163,10 +163,11 @@
         'formId': 'appointment'
       });
       
-      // 2. Prepare Form Data explicitly
+      // 2. Prepare clean form data
       var formData = new FormData(this);
       
-      // 3. Send data background data to the GOOGLE APPS SCRIPT WEB APP (Replace URL below)
+      // 3. Send background data to Google Sheets script Web App URL
+      // !!! REPLACE THE URL BELOW WITH YOUR COPIED GOOGLE WEB APP URL FROM APPS SCRIPT !!!
       fetch("PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE", {
         method: "POST",
         mode: "no-cors",
@@ -178,7 +179,7 @@
         gtag('event', 'conversion', { 'send_to': 'AW-123456789/ConversionLabel' });
       }
 
-      // 5. Redirect smoothly to the Thank You Page file
+      // 5. Redirect smoothly to your Thank You file setup
       window.location.href = "thankyou.html"; 
     };
   </script>
