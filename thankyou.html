@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Initialize dataLayer immediately -->
   <script>
     window.dataLayer = window.dataLayer || [];
   </script>
@@ -20,9 +19,15 @@
   
   <style>
     body{margin:0;font-family:Arial,sans-serif;background:#f7f4ed;color:#18231f;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}
-    .card{background:white;padding:50px 30px;border-radius:9px;border:1px solid #d6dfd9;max-width:500px;width:90%;box-shadow:0 4px 10px rgba(0,0,0,0.03)}
+    .card{background:white;padding:40px 30px;border-radius:9px;border:1px solid #d6dfd9;max-width:500px;width:90%;box-shadow:0 4px 10px rgba(0,0,0,0.03)}
     h1{color:#155a49;margin-bottom:15px;font-size:2.2rem}
-    p{font-size:1.1rem;line-height:1.6;margin-bottom:30px}
+    p{font-size:1.1rem;line-height:1.6;margin-bottom:20px}
+    
+    .data-display {background:#f0f5f2;border:1px dashed #155a49;border-radius:7px;padding:15px;margin-bottom:30px;text-align:left}
+    .data-display h3 {margin-top:0;color:#155a49;border-bottom:1px solid #d6dfd9;padding-bottom:5px;font-size:1.1rem}
+    .data-item {margin:8px 0;font-size:0.95rem;color:#333}
+    .data-item strong {color:#18231f}
+
     .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;font-size:1rem}
   </style>
 </head>
@@ -34,8 +39,31 @@
 
   <div class="card">
     <h1>Thank You! ✅</h1>
-    <p>Your site visit request has been successfully registered. Our team will contact you within 24 hours to coordinate dates, times, and routes.</p>
+    <p>Your site visit request has been successfully registered.</p>
+    
+    <!-- Live display block container -->
+    <div class="data-display">
+      <h3>Submitted Details:</h3>
+      <div class="data-item"><strong>Name:</strong> <span id="view-name">Loading...</span></div>
+      <div class="data-item"><strong>Phone:</strong> <span id="view-phone">Loading...</span></div>
+      <div class="data-item"><strong>City:</strong> <span id="view-city">Loading...</span></div>
+      <div class="data-item"><strong>State Requirement:</strong> <span id="view-state">Loading...</span></div>
+      <div class="data-item"><strong>Budget:</strong> <span id="view-budget">Loading...</span></div>
+    </div>
+
+    <p style="font-size:0.95rem; color:#666;">Our team will contact you within 24 hours to coordinate dates, times, and routes.</p>
     <a href="index.html" class="button">Back to Home</a>
   </div>
+
+  <script {nonce}>
+    // Grab submitted url parameters instantly
+    var urlParams = new URLSearchParams(window.location.search);
+    
+    document.getElementById("view-name").textContent = urlParams.get("name") || "N/A";
+    document.getElementById("view-phone").textContent = urlParams.get("phone") || "N/A";
+    document.getElementById("view-city").textContent = urlParams.get("city") || "N/A";
+    document.getElementById("view-state").textContent = urlParams.get("landState") || "N/A";
+    document.getElementById("view-budget").textContent = urlParams.get("budget") || "N/A";
+  </script>
 </body>
 </html>
