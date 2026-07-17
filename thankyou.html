@@ -1,10 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-  </script>
-
+  <script>window.dataLayer = window.dataLayer || [];</script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -15,55 +12,79 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Thank You | NMR Real Estate</title>
-  
-  <style>
-    body{margin:0;font-family:Arial,sans-serif;background:#f7f4ed;color:#18231f;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}
-    .card{background:white;padding:40px 30px;border-radius:9px;border:1px solid #d6dfd9;max-width:500px;width:90%;box-shadow:0 4px 10px rgba(0,0,0,0.03)}
-    h1{color:#155a49;margin-bottom:15px;font-size:2.2rem}
-    p{font-size:1.1rem;line-height:1.6;margin-bottom:20px}
-    
-    .data-display {background:#f0f5f2;border:1px dashed #155a49;border-radius:7px;padding:15px;margin-bottom:30px;text-align:left}
-    .data-display h3 {margin-top:0;color:#155a49;border-bottom:1px solid #d6dfd9;padding-bottom:5px;font-size:1.1rem}
-    .data-item {margin:8px 0;font-size:0.95rem;color:#333}
-    .data-item strong {color:#18231f}
+  <title>NMR Real Estate</title>
+  <link rel="icon" type="image/jpeg" href="nmr-logo.jpeg">
 
-    .button{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 30px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;text-decoration:none;font-size:1rem}
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f4ed;color:#18231f}
+    header{min-height:400px;padding:40px 7%;color:white;background:linear-gradient(90deg,#123b31dd,#123b3155),url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85") center/cover;display:flex;flex-direction:column;justify-content:center}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:1.2rem}
+    .logo{width:55px;height:55px;border-radius:50%;object-fit:cover;border:2px solid #d5a449}
+    main{width:min(600px,92%);margin:50px auto}
+    .form-container{background:#fff;border:1px solid #d6dfd9;border-radius:9px;padding:30px;box-shadow:0 4px 10px rgba(0,0,0,0.02)}
+    h2{margin-top:0;color:#155a49;text-align:center}
+    input,select{width:100%;min-height:45px;margin:12px 0;padding:10px;border:1px solid #d6dfd9;border-radius:7px;font:inherit}
+    .button{width:100%;min-height:48px;margin-top:15px;border:0;border-radius:7px;background:#d5a449;color:#18231f;font-weight:bold;font-size:1.05rem;cursor:pointer}
   </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSLHV57H"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSLHV57H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <div class="card">
-    <h1>Thank You! ✅</h1>
-    <p>Your site visit request has been successfully registered.</p>
-    
-    <!-- Live display block container -->
-    <div class="data-display">
-      <h3>Submitted Details:</h3>
-      <div class="data-item"><strong>Name:</strong> <span id="view-name">Loading...</span></div>
-      <div class="data-item"><strong>Phone:</strong> <span id="view-phone">Loading...</span></div>
-      <div class="data-item"><strong>City:</strong> <span id="view-city">Loading...</span></div>
-      <div class="data-item"><strong>State Requirement:</strong> <span id="view-state">Loading...</span></div>
-      <div class="data-item"><strong>Budget:</strong> <span id="view-budget">Loading...</span></div>
-    </div>
+  <header>
+    <div class="brand"><img class="logo" src="nmr-logo.jpeg" alt="NMR Logo">NMR REAL ESTATE</div>
+    <h1 style="margin:20px 0 10px;">Book Your Site Visit</h1>
+    <p style="margin:0;color:#f0f5f2;">Fill out the form below to register your requirements.</p>
+  </header>
 
-    <p style="font-size:0.95rem; color:#666;">Our team will contact you within 24 hours to coordinate dates, times, and routes.</p>
-    <a href="index.html" class="button">Back to Home</a>
-  </div>
+  <main>
+    <section class="form-container">
+      <h2>Site Visit Details</h2>
+      <form id="appointment">
+        <input type="text" required name="name" placeholder="Your name">
+        <input type="tel" required name="phone" placeholder="Phone number">
+        <input type="text" required name="city" placeholder="Your city">
+        
+        <select required name="landState">
+          <option value="">Land requirement (AP or TG)</option>
+          <option value="Andhra Pradesh">Andhra Pradesh (AP)</option>
+          <option value="Telangana">Telangana (TG)</option>
+        </select>
+        
+        <select required name="budget">
+          <option value="">Your budget per acre</option>
+          <option value="25L to 30L per acre">25L to 30L per acre</option>
+          <option value="30L to 35L per acre">30L to 35L per acre</option>
+          <option value="35L to 40L per acre">35L to 40L per acre</option>
+          <option value="40L to 45L per acre">40L to 45L per acre</option>
+          <option value="45L+ per acre">45L+ per acre</option>
+        </select>
+        
+        <button class="button" type="submit">Submit Request</button>
+      </form>
+    </section>
+  </main>
 
-  <script {nonce}>
-    // Grab submitted url parameters instantly
-    var urlParams = new URLSearchParams(window.location.search);
-    
-    document.getElementById("view-name").textContent = urlParams.get("name") || "N/A";
-    document.getElementById("view-phone").textContent = urlParams.get("phone") || "N/A";
-    document.getElementById("view-city").textContent = urlParams.get("city") || "N/A";
-    document.getElementById("view-state").textContent = urlParams.get("landState") || "N/A";
-    document.getElementById("view-budget").textContent = urlParams.get("budget") || "N/A";
+  <script>
+    document.getElementById("appointment").onsubmit = function(e){
+      e.preventDefault();
+      
+      window.dataLayer.push({
+        'event': 'form_submitted',
+        'formId': 'appointment'
+      });
+      
+      var formData = new FormData(this);
+      
+      // Submit directly to your live Web App URL configuration 
+      fetch("https://script.google.com/macros/s/AKfycbwCpj-CUqNmmO5BHjws5llbA-8Emh3Wa_s6EW4xRn6TuiFv3UoucaW7eVMoaQ6bUz1f/exec", {
+        method: "POST",
+        mode: "no-cors",
+        body: new URLSearchParams(formData)
+      });
+      
+      window.location.href = "thankyou.html"; 
+    };
   </script>
 </body>
 </html>
