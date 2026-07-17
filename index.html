@@ -157,28 +157,24 @@
     document.getElementById("appointment").onsubmit = function(e){
       e.preventDefault();
       
-      // 1. Send dataLayer event to GTM instantly
       window.dataLayer.push({
         'event': 'form_submitted',
         'formId': 'appointment'
       });
       
-      // 2. Prepare clean form data
       var formData = new FormData(this);
       
-      // 3. Send background data to your correct Google Sheets Web App URL
+      // Submit data background to your active Google Web App URL link
       fetch("https://script.google.com/macros/s/AKfycbwCpj-CUqNmmO5BHjws5llbA-8Emh3Wa_s6EW4xRn6TuiFv3UoucaW7eVMoaQ6bUz1f/exec", {
         method: "POST",
         mode: "no-cors",
         body: new URLSearchParams(formData)
       });
       
-      // 4. Fallback direct global tracking call
       if (typeof gtag === 'function') {
         gtag('event', 'conversion', { 'send_to': 'AW-123456789/ConversionLabel' });
       }
 
-      // 5. Redirect smoothly to your Thank You page file
       window.location.href = "thankyou.html"; 
     };
   </script>
