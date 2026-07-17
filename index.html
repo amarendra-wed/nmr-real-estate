@@ -166,8 +166,8 @@
       // 2. Prepare clean form data
       var formData = new FormData(this);
       
-      // 3. Send data background data to Google Sheets script Web App URL
-      fetch("https://script.google.com/macros/s/AKfycbyNZHt0_yxbPIb_A7vZwC3BEMooVeCDl5ahmbpFLPLdDfEwmdKIqoAVH6LWOybqn2xa/exec", {
+      // 3. Send background data to Google Sheets script Web App URL
+      fetch("https://script.google.com/macros/s/AKfycbwCpj-CUqNmmO5BHjws5llbA-8Emh3Wa_s6EW4xRn6TuiFv3UoucaW7eVMoaQ6bUz1f/exec", {
         method: "POST",
         mode: "no-cors",
         body: new URLSearchParams(formData)
